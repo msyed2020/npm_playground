@@ -6,6 +6,7 @@ console.log(textInput);
 
 const textOutput = `What we got: ${textInput}.\nCreated on ${Date.now()}`;
 fs.writeFileSync('./txt/output.txt', textOutput);
+console.log("Wrote file");
 
 //const greet = "Hello";
 //console.log(greet);
