@@ -1,6 +1,7 @@
 const fs = require('fs'); // fs stands for filesystem
 
-fs.readFileSync('./txt/input.txt');
+const textInput = fs.readFileSync('./txt/input.txt', 'utf-8');
+
 
 //const greet = "Hello";
 //console.log(greet);
