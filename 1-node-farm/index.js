@@ -12,7 +12,8 @@ console.log("Wrote file sync");
 
 //const greet = "Hello";
 //console.log(greet);
-//console.log("Welcome to Node.js!! I guess XD");
+//const ability = "Welcome to Node.js!! I guess XD"
+//console.log(ability);
 
 // async way
 
