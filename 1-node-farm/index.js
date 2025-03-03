@@ -19,4 +19,7 @@ console.log("Wrote file sync");
 
 fs.readFile('./txt/input.txt', 'utf-8', (err, data) => {
     console.log(data);
+    fs.readFile('./txt/append.txt', 'utf-8', (err, data2) => {
+        console.log(data2);
+    });
 });
