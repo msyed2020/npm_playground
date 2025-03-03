@@ -32,3 +32,7 @@ const http = require('http'); // build webserver, include http
 // });
 
 // Server stuff (actually needed lol)
+
+http.createServer((req, res) => {
+    res.end("Server");
+});
