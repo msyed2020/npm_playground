@@ -21,5 +21,9 @@ fs.readFile('./txt/input.txt', 'utf-8', (err, data) => {
     console.log(data);
     fs.readFile('./txt/append.txt', 'utf-8', (err, data2) => {
         console.log(data2);
+        
+        fs.writeFile('./txt/final.txt', `${data}\n${data2}`, 'utf-8', err => {
+            console.log("File has been written");
+        });
     });
 });
