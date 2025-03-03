@@ -9,7 +9,7 @@ console.log(textInput);
 const textOutput = `What we got: ${textInput}.\nCreated on ${Date.now()}`;
 fs.writeFileSync('./txt/output.txt', textOutput);
 console.log("Wrote file sync");
-
+console.log("\n=========================\n");
 //const greet = "Hello";
 //console.log(greet);
 //const ability = "Welcome to Node.js!! I guess XD"
