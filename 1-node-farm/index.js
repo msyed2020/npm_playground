@@ -17,7 +17,7 @@ const server = http.createServer((req, res) => {
     }
     else if (path === '/api') {
 
-        
+        fs.readFile('./dev-data/data.json');
 
         res.end("My API");
     }
