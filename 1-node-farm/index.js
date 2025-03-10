@@ -7,7 +7,7 @@ const url = require('url'); // Needed for routing
 // To clarify on routing: setting up different behaviors for different URLs
 
 const server = http.createServer((req, res) => {
-    console.log(req.url);
+    const path = req.url;
     res.end("Server");
 });
 
