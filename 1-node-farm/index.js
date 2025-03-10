@@ -3,6 +3,8 @@ const http = require('http'); // build webserver, include http
 
 // machine time coming lol
 
+// To clarify on routing: setting up different behaviors for different URLs
+
 const server = http.createServer((req, res) => {
     res.end("Server");
 });
