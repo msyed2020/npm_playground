@@ -17,9 +17,12 @@ const server = http.createServer((req, res) => {
     }
     else if (path === '/api') {
 
-        fs.readFile('./dev-data/data.json');
+        fs.readFile(`${__dirname}/dev-data/data.json`, 'utf-8', (err, data) => {
+            const prodData = JSON.parse(data);
+            res.writeHead(200, { 'Content-type': 'application/json' });
+            res.end(data);
+        });
 
-        res.end("My API");
     }
     else {
         res.writeHead(404, {
