@@ -6,6 +6,9 @@ const url = require('url'); // Needed for routing
 
 // To clarify on routing: setting up different behaviors for different URLs
 
+const data = fs.readFileSync(`${__dirname}/dev-data/data.json`, 'utf-8');
+const prodData = JSON.parse(data);
+
 const server = http.createServer((req, res) => {
     const path = req.url;
 
@@ -16,13 +19,8 @@ const server = http.createServer((req, res) => {
         res.end("These are my projects!");
     }
     else if (path === '/api') {
-
-        fs.readFile(`${__dirname}/dev-data/data.json`, 'utf-8', (err, data) => {
-            const prodData = JSON.parse(data);
-            res.writeHead(200, { 'Content-type': 'application/json' });
-            res.end(data);
-        });
-
+        res.writeHead(200, { 'Content-type': 'application/json' });
+        res.end(data);
     }
     else {
         res.writeHead(404, {
