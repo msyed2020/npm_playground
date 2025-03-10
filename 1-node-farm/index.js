@@ -1,4 +1,4 @@
-//const fs = require('fs'); // fs stands for filesystem
+const fs = require('fs'); // fs stands for filesystem
 const http = require('http'); // build webserver, include http
 const url = require('url'); // Needed for routing
 
@@ -14,6 +14,12 @@ const server = http.createServer((req, res) => {
     }
     else if (path === '/projects') {
         res.end("These are my projects!");
+    }
+    else if (path === '/api') {
+
+        
+
+        res.end("My API");
     }
     else {
         res.writeHead(404, {
