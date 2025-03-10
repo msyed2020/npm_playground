@@ -15,6 +15,10 @@ const server = http.createServer((req, res) => {
     else if (path === '/projects') {
         res.end("These are my projects!");
     }
+    else {
+        res.writeHead(404); // This function forces 404 Error
+        res.end("Page Not Found");
+    }
 });
 
 server.listen(8000, '127.0.0.1', () => {
