@@ -8,7 +8,13 @@ const url = require('url'); // Needed for routing
 
 const server = http.createServer((req, res) => {
     const path = req.url;
-    res.end("Server");
+
+    if (path === '/home' || path === '/') {
+        res.end("Home page");
+    }
+    else if (path === '/projects') {
+        res.end("These are my projects!");
+    }
 });
 
 server.listen(8000, '127.0.0.1', () => {
