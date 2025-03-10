@@ -16,8 +16,11 @@ const server = http.createServer((req, res) => {
         res.end("These are my projects!");
     }
     else {
-        res.writeHead(404); // This function forces 404 Error
-        res.end("Page Not Found");
+        res.writeHead(404, {
+            'Content-type': 'text/html',
+            'my-own-header': 'hello'
+        }); // This function forces 404 Error
+        res.end("<h3>Page Not Found</h3>");
     }
 });
 
