@@ -5,7 +5,9 @@ const url = require('url'); // Needed for routing
 // machine time coming lol
 
 // To clarify on routing: setting up different behaviors for different URLs
-
+const overview = fs.readFileSync(`${__dirname}/templates/overview.html`, 'utf-8');
+const card = fs.readFileSync(`${__dirname}/templates/card.html`, 'utf-8');
+const product = fs.readFileSync(`${__dirname}/templates/product.html`, 'utf-8');
 const data = fs.readFileSync(`${__dirname}/dev-data/data.json`, 'utf-8');
 const prodData = JSON.parse(data);
 
