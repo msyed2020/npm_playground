@@ -16,7 +16,8 @@ const server = http.createServer((req, res) => { // req url is page url, templat
 
     // Home
     if (path === '/home' || path === '/') {
-        res.end("Home page");
+        res.writeHead(200, { 'Content-type': 'text/html' });
+        res.end(overview);
     }
     // Projects
     else if (path === '/projects') {
