@@ -12,16 +12,20 @@ const prodData = JSON.parse(data);
 const server = http.createServer((req, res) => { // req url is page url, templates represent the actual url pages
     const path = req.url;
 
+    // Home
     if (path === '/home' || path === '/') {
         res.end("Home page");
     }
+    // Projects
     else if (path === '/projects') {
         res.end("These are my projects!");
     }
+    // API
     else if (path === '/api') {
         res.writeHead(200, { 'Content-type': 'application/json' });
         res.end(data);
     }
+    // Error Handle
     else {
         res.writeHead(404, {
             'Content-type': 'text/html',
