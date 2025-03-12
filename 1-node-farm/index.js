@@ -27,7 +27,7 @@ const server = http.createServer((req, res) => { // req url is page url, templat
 
         const cards = prodData.map(el => replaceTemplate(card, el)).join('');
 
-        console.log(cards);
+        //console.log(cards);
 
         res.end(overview);
     }
