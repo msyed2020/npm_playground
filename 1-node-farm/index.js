@@ -9,7 +9,7 @@ const replaceTemplate = (temp, prod) => {
     // image has not been edited so all items have cheese emoji
 
     let output = temp.replace(/{%PRODUCTNAME%}/g, prod.productName); // //g means apply globally to all variables
-    output = temp.replace(/{%PRICE%}/g, prod.price);
+    output = output.replace(/{%PRICE%}/g, prod.price);
     if (!prod.organic) {
         output = output.replace(/{%NOT_ORGANIC%}/g, 'not-organic');
     }
