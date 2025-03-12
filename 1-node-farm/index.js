@@ -17,6 +17,9 @@ const server = http.createServer((req, res) => { // req url is page url, templat
     // Home
     if (path === '/home' || path === '/') {
         res.writeHead(200, { 'Content-type': 'text/html' });
+
+        const cards = prodData.map(el => replaceTemplate(tempCard, el));
+
         res.end(overview);
     }
     // Projects
