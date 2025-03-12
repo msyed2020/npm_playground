@@ -8,6 +8,7 @@ const replaceTemplate = (temp, prod) => {
     if (!prod.organic) {
         output = output.replace(/{%NOT_ORGANIC%}/g, 'not-organic');
     }
+    return output;
 };
 
 // To clarify on routing: setting up different behaviors for different URLs
