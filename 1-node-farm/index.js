@@ -3,7 +3,11 @@ const http = require('http'); // build webserver, include http
 const url = require('url'); // Needed for routing
 
 const replaceTemplate = (temp, prod) => {
-    let output = temp.replace("{%PRODUCTNAME%}", prod.productName);
+    let output = temp.replace(/{%PRODUCTNAME%}/g, prod.productName); // //g means apply globally to all variables
+
+    if (!prod.organic) {
+        output = output.replace(/{%NOT_ORGANIC%}/g, 'not-organic');
+    }
 };
 
 // To clarify on routing: setting up different behaviors for different URLs
