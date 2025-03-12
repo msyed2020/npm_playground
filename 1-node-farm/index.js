@@ -25,7 +25,9 @@ const server = http.createServer((req, res) => { // req url is page url, templat
     if (path === '/home' || path === '/') {
         res.writeHead(200, { 'Content-type': 'text/html' });
 
-        const cards = prodData.map(el => replaceTemplate(card, el));
+        const cards = prodData.map(el => replaceTemplate(card, el)).join('');
+
+        console.log(cards);
 
         res.end(overview);
     }
