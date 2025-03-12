@@ -2,7 +2,9 @@ const fs = require('fs'); // fs stands for filesystem
 const http = require('http'); // build webserver, include http
 const url = require('url'); // Needed for routing
 
-// machine time coming lol
+const replaceTemplate = (temp, prod) => {
+    let output = temp.replace("{%PRODUCTNAME%}", prod.productName);
+};
 
 // To clarify on routing: setting up different behaviors for different URLs
 const overview = fs.readFileSync(`${__dirname}/templates/overview.html`, 'utf-8');
@@ -18,7 +20,7 @@ const server = http.createServer((req, res) => { // req url is page url, templat
     if (path === '/home' || path === '/') {
         res.writeHead(200, { 'Content-type': 'text/html' });
 
-        const cards = prodData.map(el => replaceTemplate(tempCard, el));
+        const cards = prodData.map(el => replaceTemplate(card, el));
 
         res.end(overview);
     }
