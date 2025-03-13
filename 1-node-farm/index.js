@@ -39,7 +39,9 @@ const server = http.createServer((req, res) => { // req url is page url, templat
     }
     // Projects
     else if (path === '/projects') {
-        res.end(product);
+        const cards = prodData.map(el => replaceTemplate(card, el)).join('');
+        const output = product.replace('{%PRODUCT_CARD%}', cards);
+        res.end(output);
     }
     // API
     else if (path === '/api') {
