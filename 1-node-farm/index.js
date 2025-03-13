@@ -38,7 +38,7 @@ const server = http.createServer((req, res) => { // req url is page url, templat
     }
     // Projects
     else if (path === '/projects') {
-        res.end("These are my projects!");
+        res.end(product);
     }
     // API
     else if (path === '/api') {
