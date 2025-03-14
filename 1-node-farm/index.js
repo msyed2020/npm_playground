@@ -25,6 +25,7 @@ const data = fs.readFileSync(`${__dirname}/dev-data/data.json`, 'utf-8');
 const prodData = JSON.parse(data);
 
 const server = http.createServer((req, res) => { // req url is page url, templates represent the actual url pages
+    const query = url.parse(req.url, true);
     const path = req.url;
 
     // Home
