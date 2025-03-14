@@ -25,9 +25,10 @@ const data = fs.readFileSync(`${__dirname}/dev-data/data.json`, 'utf-8');
 const prodData = JSON.parse(data);
 
 const server = http.createServer((req, res) => { // req url is page url, templates represent the actual url pages
+    //console.log(req.url);
     const { query, pathname } = url.parse(req.url, true);
-    //const path = req.url;
-
+    //const pathname = req.url;
+    
     // Home
     if (pathname === '/home' || pathname === '/') {
         res.writeHead(200, { 'Content-type': 'text/html' });
