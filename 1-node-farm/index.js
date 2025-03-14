@@ -29,7 +29,7 @@ const server = http.createServer((req, res) => { // req url is page url, templat
     //const path = req.url;
 
     // Home
-    if (path === '/home' || path === '/') {
+    if (pathname === '/home' || pathname === '/') {
         res.writeHead(200, { 'Content-type': 'text/html' });
 
         const cards = prodData.map(el => replaceTemplate(card, el)).join('');
@@ -39,13 +39,13 @@ const server = http.createServer((req, res) => { // req url is page url, templat
         res.end(output);
     }
     // Projects
-    else if (path === '/projects') {
+    else if (pathname === '/projects') {
         //const cards = prodData.map(el => replaceTemplate(card, el)).join('');
         //const output = product.replace('{%PRODUCT_CARD%}', cards);
         res.end(product);
     }
     // API
-    else if (path === '/api') {
+    else if (pathname === '/api') {
         res.writeHead(200, { 'Content-type': 'application/json' });
         res.end(data);
     }
