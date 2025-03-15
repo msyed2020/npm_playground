@@ -43,8 +43,10 @@ const server = http.createServer((req, res) => { // req url is page url, templat
     else if (pathname === '/projects') {
         //const cards = prodData.map(el => replaceTemplate(card, el)).join('');
         //const output = product.replace('{%PRODUCT_CARD%}', cards);
-        console.log(query);
-        res.end(product);
+        res.writeHead(200, { 'Content-type': 'text/html' });
+        const prodDisp = prodData[query.id];
+        const output = replaceTemplate(product, prodDisp);
+        res.end(output);
     }
     // API
     else if (pathname === '/api') {
