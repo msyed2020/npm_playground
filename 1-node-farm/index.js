@@ -1,21 +1,8 @@
 const fs = require('fs'); // fs stands for filesystem
 const http = require('http'); // build webserver, include http
 const url = require('url'); // Needed for routing
+const replaceTemplate = require('./modules/replaceTemplate');
 
-const replaceTemplate = (temp, prod) => {
-
-    // Just so we're clear, since this is proof of concept and not a real functioning site,
-    // only a few parameters have been changed from the given code. For instance,
-    // image has not been edited so all items have cheese emoji
-
-    let output = temp.replace(/{%PRODUCTNAME%}/g, prod.productName); // //g means apply globally to all variables
-    output = output.replace(/{%PRICE%}/g, prod.price);
-    output = output.replace(/{%LOCATION%}/g, prod.from);
-    if (!prod.organic) {
-        output = output.replace(/{%NOT_ORGANIC%}/g, 'not-organic');
-    }
-    return output;
-};
 
 // To clarify on routing: setting up different behaviors for different URLs
 const overview = fs.readFileSync(`${__dirname}/templates/overview.html`, 'utf-8');
