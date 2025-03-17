@@ -5,4 +5,9 @@ emitter.on("newSale", () => {
     console.log("New sale!");
 });
 
-emitter.emit("newSale");
+emitter.on("newSale", num => {
+    console.log(`There is ${num} as input.`);
+})
+
+//emitter.emit("newSale");
+emitter.emit("newSale", 9)
