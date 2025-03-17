@@ -1,4 +1,5 @@
 const EventEmitter = require('events');
+const server = require('http');
 const emitter = new EventEmitter();
 
 emitter.on("newSale", () => {
@@ -11,3 +12,6 @@ emitter.on("newSale", num => {
 
 //emitter.emit("newSale");
 emitter.emit("newSale", 9)
+
+const respserver = server.createServer();
+
