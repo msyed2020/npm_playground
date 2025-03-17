@@ -13,5 +13,5 @@ emitter.on("newSale", num => {
 //emitter.emit("newSale");
 emitter.emit("newSale", 9)
 
-const respserver = server.createServer();
+const respserver = server.createServer(); // nvm I ain't using this XD
 
