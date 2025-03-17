@@ -13,6 +13,7 @@ const data = fs.readFileSync(`${__dirname}/dev-data/data.json`, 'utf-8');
 const prodData = JSON.parse(data);
 
 const slugs = prodData.map(el => slugify(el.productName, { lower: true}));
+console.log(slugs);
 
 //console.log(slugify('Fresh Avocados', { lower: true }));
 
