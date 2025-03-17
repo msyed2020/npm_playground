@@ -12,7 +12,9 @@ const product = fs.readFileSync(`${__dirname}/templates/product.html`, 'utf-8');
 const data = fs.readFileSync(`${__dirname}/dev-data/data.json`, 'utf-8');
 const prodData = JSON.parse(data);
 
-console.log(slugify('Fresh Avocados', { lowercase: true }));
+const slugs = prodData.map(el => slugify(el.productName, { lower: true}));
+
+//console.log(slugify('Fresh Avocados', { lower: true }));
 
 const server = http.createServer((req, res) => { // req url is page url, templates represent the actual url pages
     //console.log(req.url);
