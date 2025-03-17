@@ -1,6 +1,7 @@
 const fs = require('fs'); // fs stands for filesystem
 const http = require('http'); // build webserver, include http
 const url = require('url'); // Needed for routing
+const slugify = require('slugify');
 const replaceTemplate = require('./modules/replaceTemplate');
 
 
