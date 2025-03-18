@@ -10,7 +10,7 @@ app.post('/', (req, res) => {
     res.send("POST");
 })
 
-const port = 3000;
+const port = 3000; // need to change port # later
 app.listen(port, () => {
     console.log(`App running on port ${port}...`);
 });
