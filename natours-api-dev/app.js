@@ -10,6 +10,8 @@ const app = express();
 //     res.send("POST");
 // })
 
+app.get('/api/tours')
+
 const port = 3000; // need to change port # later
 app.listen(port, () => {
     console.log(`App running on port ${port}...`);
