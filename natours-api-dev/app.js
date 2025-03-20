@@ -26,7 +26,7 @@ app.get('/api/v1/tours', (req, res) => {
 
 app.post('api/v1/tours', (req, res) => {
     console.log(req.body);
-    res.send("Post request received");
+    res.send("Post request received"); // receive post request
 });
 
 const port = 3000; // need to change port # later
