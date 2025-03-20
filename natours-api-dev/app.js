@@ -14,7 +14,7 @@ app.use(express.json());
 
 const tourFile = JSON.parse(fs.readFileSync(`${__dirname}/dev-data/data/tours-simple.json`));
 
-app.get('/api/v1/tours', (req, res) => {
+app.get('/api/v1/tours', (req, res) => { // get
     res.status(200).json({
         status: 'success',
         results: tourFile.length,
