@@ -10,6 +10,8 @@ const app = express();
 //     res.send("POST");
 // })
 
+const tourFile = fs.readFileSync(`${__dirname}/dev-data/data/tours-simple.json`);
+
 app.get('/api/v1/tours', (req, res) => {
 
 });
