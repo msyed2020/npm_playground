@@ -1,5 +1,5 @@
 const express = require('express');
-
+const fs = require('fs');
 const app = express();
 
 // app.get('/', (req, res) => { // Basic GET stuff
@@ -10,7 +10,9 @@ const app = express();
 //     res.send("POST");
 // })
 
-app.get('/api/tours')
+app.get('/api/v1/tours', (req, res) => {
+
+});
 
 const port = 3000; // need to change port # later
 app.listen(port, () => {
