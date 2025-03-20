@@ -2,6 +2,8 @@ const express = require('express');
 const fs = require('fs');
 const app = express();
 
+app.use(express.json());
+
 // app.get('/', (req, res) => { // Basic GET stuff
 //     res.status(200).send('Server stuff');
 // });
@@ -20,6 +22,10 @@ app.get('/api/v1/tours', (req, res) => {
             tours: tourFile
         }
     });
+});
+
+app.post('api/v1/tours', (req, res) => {
+    console.log(req.body);
 });
 
 const port = 3000; // need to change port # later
