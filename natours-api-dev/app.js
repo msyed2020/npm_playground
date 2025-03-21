@@ -21,7 +21,7 @@ app.post('/api/v1/tours', (req, res) => { // post
     const newID = tourFile[tourFile.length - 1].id + 1;
     const newTour = Object.assign({ id: newID }, req.body);
 
-    tours.push(newTour);
+    tourFile.push(newTour);
     fs.writeFile(`${__dirname}/starter/dev-data/data/tours-simple.json`, JSON.stringify(tourFile), err => {
         res.status(201).json({
             status: 'success',
@@ -31,7 +31,6 @@ app.post('/api/v1/tours', (req, res) => { // post
         });
     });
 
-    res.send("Post request received"); // receive post request
 });
 
 const port = 3000; // need to change port # later
