@@ -24,7 +24,7 @@ app.get('/api/v1/tours', (req, res) => { // get
     });
 });
 
-app.post('api/v1/tours', (req, res) => { // post
+app.post('/api/v1/tours', (req, res) => { // post
     console.log(req.body);
     res.send("Post request received"); // receive post request
 });
