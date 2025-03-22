@@ -33,7 +33,7 @@ app.post('/api/v1/tours', (req, res) => { // post
 
 });
 
-const port = 3000; // need to change port # later
+const port = 3000;
 app.listen(port, () => {
     console.log(`App running on port ${port}...`);
 });
