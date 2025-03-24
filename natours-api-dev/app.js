@@ -1,3 +1,5 @@
+// BTW, run this in Postman to see commands and such XD
+
 const express = require('express');
 const fs = require('fs');
 const app = express();
@@ -21,7 +23,7 @@ app.post('/api/v1/tours', (req, res) => { // post
     const newTour = Object.assign({ id: newID }, req.body);
 
     tourFile.push(newTour);
-    fs.writeFile(`${__dirname}/starter/dev-data/data/tours-simple.json`, JSON.stringify(tourFile), err => { // make obj
+    fs.writeFile(`${__dirname}/starter/dev-data/data/tours-simple.json`, JSON.stringify(tourFile), err => {
         res.status(201).json({
             status: 'success',
             data: {
