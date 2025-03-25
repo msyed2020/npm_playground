@@ -6,7 +6,7 @@ app.use(express.json());
 
 const tourFile = JSON.parse(fs.readFileSync(`${__dirname}/starter/dev-data/data/tours-simple.json`));
 
-app.get('/api/v1/tours', (req, res) => { // get
+app.get('/api/v1/tours', (req, res) => { 
     res.status(200).json({
         status: 'success',
         results: tourFile.length,
@@ -16,7 +16,7 @@ app.get('/api/v1/tours', (req, res) => { // get
     });
 });
 
-app.post('/api/v1/tours', (req, res) => { // post
+app.post('/api/v1/tours', (req, res) => { 
     const newID = tourFile[tourFile.length - 1].id + 1;
     const newTour = Object.assign({ id: newID }, req.body);
 
