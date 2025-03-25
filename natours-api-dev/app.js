@@ -56,7 +56,7 @@ app.post('/api/v1/tours', (req, res) => {
 });
 
 // app.patch updates data
-app.patch('api/v1/tours/:id', (req, res) => {
+app.patch('/api/v1/tours/:id', (req, res) => {
 
     const id = req.params.id * 1;
 
@@ -70,7 +70,7 @@ app.patch('api/v1/tours/:id', (req, res) => {
     res.status(200).json({
         status: 'success',
         data: {
-            tour
+            tour: 'updated'
         }
     });
 });
