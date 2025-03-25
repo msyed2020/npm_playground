@@ -20,10 +20,10 @@ app.get('/api/v1/tours/:id', (req, res) => {
     console.log(req.params);
     res.status(200).json({
         status: 'success',
-        results: tourFile.length,
-        data: {
-            tours: tourFile
-        }
+        // results: tourFile.length,
+        // data: {
+        //     tours: tourFile
+        // }
     });
 });
 
