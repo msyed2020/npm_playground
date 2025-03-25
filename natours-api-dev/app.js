@@ -21,6 +21,8 @@ app.get('/api/v1/tours/:id', (req, res) => {
 
     const id = req.params.id * 1; // req.params.id is a string, * 1 converts it to int
 
+    const tour = tourFile.find(el => el.id === req.params);
+
     res.status(200).json({
         status: 'success',
         // results: tourFile.length,
