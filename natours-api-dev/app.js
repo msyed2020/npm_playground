@@ -1,5 +1,3 @@
-// BTW, run this in Postman to see commands and such XD
-
 const express = require('express');
 const fs = require('fs');
 const app = express();
