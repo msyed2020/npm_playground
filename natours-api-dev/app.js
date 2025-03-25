@@ -18,6 +18,9 @@ app.get('/api/v1/tours', (req, res) => {
 
 app.get('/api/v1/tours/:id', (req, res) => { 
     console.log(req.params);
+
+    const id = req.params.id * 1; // req.params.id is a string, * 1 converts it to int
+
     res.status(200).json({
         status: 'success',
         // results: tourFile.length,
