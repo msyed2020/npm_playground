@@ -87,7 +87,7 @@ app.delete('/api/v1/tours/:id', (req, res) => {
         });
     }
 
-    res.status(204).json({
+    res.status(204).json({ // 204 No Content
         status: 'success',
         data: null
     });
