@@ -39,7 +39,7 @@ app.get('/api/v1/tours/:id', (req, res) => {
     });
 });
 
-app.post('/api/v1/tours', (req, res) => { 
+app.post('/api/v1/tours', (req, res) => { // post
     const newID = tourFile[tourFile.length - 1].id + 1;
     const newTour = Object.assign({ id: newID }, req.body);
 
