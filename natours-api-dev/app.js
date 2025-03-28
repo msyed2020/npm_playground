@@ -16,7 +16,7 @@ app.get('/api/v1/tours', (req, res) => {
     });
 });
 
-app.get('/api/v1/tours/:id', (req, res) => { // get
+app.get('/api/v1/tours/:id', (req, res) => {
     //console.log(req.params);
 
     const id = req.params.id * 1; // req.params.id is a string, * 1 converts it to int
@@ -39,7 +39,7 @@ app.get('/api/v1/tours/:id', (req, res) => { // get
     });
 });
 
-app.post('/api/v1/tours', (req, res) => { // post
+app.post('/api/v1/tours', (req, res) => {
     const newID = tourFile[tourFile.length - 1].id + 1;
     const newTour = Object.assign({ id: newID }, req.body);
 
