@@ -28,6 +28,10 @@ const getAllTours = (req, res) => {
 //     });
 // });
 
+// new id-less get req lol
+
+app.get('/api/v1/tours', getAllTours);
+
 app.get('/api/v1/tours/:id', (req, res) => {
 
     const id = req.params.id * 1; // req.params.id is a string, * 1 converts it to int
