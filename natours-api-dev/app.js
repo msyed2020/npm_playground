@@ -16,16 +16,17 @@ const getAllTours = (req, res) => {
     });
 }
 
+// old id-less get req
 
-app.get('/api/v1/tours', (req, res) => { 
-    res.status(200).json({
-        status: 'success',
-        results: tourFile.length,
-        data: {
-            tours: tourFile
-        }
-    });
-});
+// app.get('/api/v1/tours', (req, res) => { 
+//     res.status(200).json({
+//         status: 'success',
+//         results: tourFile.length,
+//         data: {
+//             tours: tourFile
+//         }
+//     });
+// });
 
 app.get('/api/v1/tours/:id', (req, res) => {
 
