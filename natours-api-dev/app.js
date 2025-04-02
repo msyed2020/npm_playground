@@ -54,11 +54,11 @@ const getTour = (req, res) => {
 
 app.get('/api/v1/tours', getAllTours);
 
-// new id get req
+
 
 app.get('/api/v1/tours', getTour);
 
-// old id get req
+
 
 // app.get('/api/v1/tours/:id', (req, res) => {
 
