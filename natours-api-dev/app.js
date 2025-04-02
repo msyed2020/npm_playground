@@ -54,27 +54,29 @@ const getTour = (req, res) => {
 
 app.get('/api/v1/tours', getAllTours);
 
-app.get('/api/v1/tours/:id', (req, res) => {
+// old id get req
 
-    const id = req.params.id * 1; // req.params.id is a string, * 1 converts it to int
+// app.get('/api/v1/tours/:id', (req, res) => {
 
-    if (id > tourFile.length) {
-        return res.status(404).json({
-            status: 'fail',
-            message: 'Invalid ID'
-        });
-    }
+//     const id = req.params.id * 1;
 
-    const tour = tourFile.find(el => el.id === id);
+//     if (id > tourFile.length) {
+//         return res.status(404).json({
+//             status: 'fail',
+//             message: 'Invalid ID'
+//         });
+//     }
 
-    res.status(200).json({
-        status: 'success',
-        results: tourFile.length,
-        data: {
-            tour
-        }
-    });
-});
+//     const tour = tourFile.find(el => el.id === id);
+
+//     res.status(200).json({
+//         status: 'success',
+//         results: tourFile.length,
+//         data: {
+//             tour
+//         }
+//     });
+// });
 
 app.post('/api/v1/tours', (req, res) => {
     const newID = tourFile[tourFile.length - 1].id + 1;
