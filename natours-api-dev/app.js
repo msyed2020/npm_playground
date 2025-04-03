@@ -5,7 +5,7 @@ const app = express();
 app.use(express.json());
 
 app.use((req, res, next) => {
-    
+    console.log("Middleware check");
 });
 
 const tourFile = JSON.parse(fs.readFileSync(`${__dirname}/starter/dev-data/data/tours-simple.json`));
