@@ -4,6 +4,10 @@ const app = express();
 
 app.use(express.json());
 
+app.use((req, res, next) => {
+    
+});
+
 const tourFile = JSON.parse(fs.readFileSync(`${__dirname}/starter/dev-data/data/tours-simple.json`));
 
 const getAllTours = (req, res) => {
