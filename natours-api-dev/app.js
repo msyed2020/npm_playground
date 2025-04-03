@@ -12,6 +12,7 @@ app.use((req, res, next) => {
 // check for time
 app.use((req, res, next) => {
     req.requestTime = new Date().toISOString;
+    next();
 });
 
 const tourFile = JSON.parse(fs.readFileSync(`${__dirname}/starter/dev-data/data/tours-simple.json`));
