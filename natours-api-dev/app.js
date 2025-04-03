@@ -6,6 +6,7 @@ app.use(express.json());
 
 app.use((req, res, next) => {
     console.log("Middleware check");
+    next(); // always use next function in middleware
 });
 
 const tourFile = JSON.parse(fs.readFileSync(`${__dirname}/starter/dev-data/data/tours-simple.json`));
