@@ -191,6 +191,9 @@ app.delete('/api/v1/tours/:id', (req, res) => {
 
 const userRouter = express.Router();
 
+userRouter.param('id', (req, res, next, val) => { // val is parameter value
+
+});
 
 userRouter.route('/').get(getAllUsers).post(createUser); // use the router variable for routing lol
 
