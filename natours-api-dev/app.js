@@ -191,11 +191,12 @@ app.delete('/api/v1/tours/:id', (req, res) => {
 
 const userRouter = express.Router();
 
-app.use('/api/v1/tours', userRouter);
 
-app.route('/').get(getAllUsers).post(createUser);
+userRouter.route('/').get(getAllUsers).post(createUser); // use the router variable for routing lol
 
-app.route('/:id').get(getUser).patch(updateUser).delete(deleteUser);
+userRouter.route('/:id').get(getUser).patch(updateUser).delete(deleteUser);
+
+app.use('/api/v1/users', userRouter);
 
 const port = 3000;
 app.listen(port, () => {
