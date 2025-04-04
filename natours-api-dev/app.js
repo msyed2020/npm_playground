@@ -54,6 +54,10 @@ const getTour = (req, res) => {
     });
 };
 
+const getAllUsers = (req, res) => {
+    
+}
+
 // old id-less get req
 
 // app.get('/api/v1/tours', (req, res) => { 
