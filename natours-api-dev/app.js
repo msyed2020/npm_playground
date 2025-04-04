@@ -187,9 +187,11 @@ app.delete('/api/v1/tours/:id', (req, res) => {
     });
 });
 
-app.use('/api/v1/tours', userRouter);
+
 
 const userRouter = express.Router();
+
+app.use('/api/v1/tours', userRouter);
 
 app.route('/').get(getAllUsers).post(createUser);
 
