@@ -187,9 +187,13 @@ app.delete('/api/v1/tours/:id', (req, res) => {
     });
 });
 
-app.route('/api/v1/users').get(getAllUsers).post(createUser);
+app.use('/api/v1/tours', userRouter);
 
-app.route('/api/v1/users/:id').get(getUser).patch(updateUser).delete(deleteUser);
+const userRouter = express.Router();
+
+app.route('/').get(getAllUsers).post(createUser);
+
+app.route('/:id').get(getUser).patch(updateUser).delete(deleteUser);
 
 const port = 3000;
 app.listen(port, () => {
