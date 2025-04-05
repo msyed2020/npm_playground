@@ -9,6 +9,8 @@ app.use(express.json());
 
 app.use(morgan('dev'));
 
+app.use(express.static(`${__dirname}/starter/public`));
+
 app.use((req, res, next) => {
     console.log("Middleware check");
     next(); // always use next function in middleware
