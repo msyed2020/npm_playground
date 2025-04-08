@@ -208,7 +208,7 @@ userRouter.route('/:id').get(getUser).patch(updateUser).delete(deleteUser);
 
 app.use('/api/v1/users', userRouter);
 
-mongoose.connect();
+//mongoose.connect();
 
 const port = 3000;
 app.listen(port, () => {
