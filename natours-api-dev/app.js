@@ -1,6 +1,7 @@
 // This section is considered finished.
 
 
+const mongoose = require('mongoose');
 const express = require('express');
 const fs = require('fs');
 const morgan = require('morgan');
@@ -206,6 +207,8 @@ userRouter.route('/').get(getAllUsers).post(createUser); // use the router varia
 userRouter.route('/:id').get(getUser).patch(updateUser).delete(deleteUser);
 
 app.use('/api/v1/users', userRouter);
+
+mongoose.connect();
 
 const port = 3000;
 app.listen(port, () => {
