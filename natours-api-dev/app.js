@@ -210,6 +210,15 @@ app.use('/api/v1/users', userRouter);
 
 //mongoose.connect();
 
+const tourSchema = new mongoose.Schema({
+    name: {
+        type: String,
+        required: true
+    },
+    rating: Number,
+    price: Number
+});
+
 const port = 3000;
 app.listen(port, () => {
     console.log(`App running on port ${port}...`);
