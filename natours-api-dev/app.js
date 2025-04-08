@@ -221,6 +221,10 @@ const tourSchema = new mongoose.Schema({
 
 const Tour = mongoose.model('Tour', tourSchema);
 
+const testTour = new Tour({
+    name: 'Demo'
+});
+
 const port = 3000;
 app.listen(port, () => {
     console.log(`App running on port ${port}...`);
