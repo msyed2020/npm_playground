@@ -222,7 +222,9 @@ const tourSchema = new mongoose.Schema({
 const Tour = mongoose.model('Tour', tourSchema);
 
 const testTour = new Tour({
-    name: 'Demo'
+    name: 'Demo',
+    price: 5.50,
+    rating: 10
 });
 
 const port = 3000;
