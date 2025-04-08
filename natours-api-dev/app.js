@@ -219,7 +219,7 @@ const tourSchema = new mongoose.Schema({
     price: Number
 });
 
-const Tour = mongoose.model('Tour');
+const Tour = mongoose.model('Tour', tourSchema);
 
 const port = 3000;
 app.listen(port, () => {
